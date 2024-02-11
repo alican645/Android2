@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHeight_percent="0.25"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/gazi_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ekranText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Başvuru Ekranı"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="@id/logoImage"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/ekranText"
+        app:layout_constraintStart_toStartOf="@id/ekranText"
+        app:layout_constraintTop_toBottomOf="@id/ekranText"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Ad Soyad:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Switch
+        android:id="@+id/ortalamaSwc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:minHeight="50dp"
+        android:text="Ortalamam 2.50 Üstünde"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/edtLay"
+        app:layout_constraintStart_toStartOf="@id/edtLay"
+        app:layout_constraintTop_toBottomOf="@+id/edtLay" />
+
+
+    <RadioGroup
+        android:id="@+id/egitimDurumuRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/ortalamaSwc"
+        app:layout_constraintStart_toStartOf="@id/ortalamaSwc"
+        app:layout_constraintTop_toBottomOf="@id/ortalamaSwc"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <RadioButton
+            android:id="@+id/onLisansRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ön Lisans"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <RadioButton
+            android:id="@+id/lisansRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lisans"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"/>
+
+        <RadioButton
+            android:id="@+id/lisansUstuRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lisans Üstü"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="5dp"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/onurBelgesiCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Onur Belgesi Aldım"
+        app:layout_constraintTop_toBottomOf="@id/egitimDurumuRG"
+        app:layout_constraintStart_toStartOf="@id/egitimDurumuRG"
+        app:layout_constraintEnd_toEndOf="@id/egitimDurumuRG"
+        android:layout_marginTop="10dp"
+        />
+
+    <CheckBox
+        android:id="@+id/ogrgrpCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/onurBelgesiCB"
+        app:layout_constraintStart_toStartOf="@id/onurBelgesiCB"
+        app:layout_constraintEnd_toEndOf="@id/onurBelgesiCB"
+        android:text="Öğrenci Gruplarına Katıldım"
+        android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/hesaplaBTN"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_height="wrap_content"
+            android:text="Hesapla"
+            app:layout_constraintEnd_toEndOf="@id/ogrgrpCB"
+            app:layout_constraintStart_toStartOf="@id/ogrgrpCB"
+            app:layout_constraintTop_toBottomOf="@+id/ogrgrpCB"
+            android:layout_margin="10dp"
+            android:textSize="18sp"
+            />
+
+    <TextView
+        android:id="@+id/sonucTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hesaplaBTN"
+        app:layout_constraintStart_toStartOf="@id/hesaplaBTN"
+        app:layout_constraintEnd_toEndOf="@id/hesaplaBTN"
+        android:text="Sonucunuz:"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
